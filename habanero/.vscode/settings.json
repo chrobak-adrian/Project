@@ -1,4 +1,6 @@
 {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "tslint.alwaysShowRuleFailuresAsWarnings": false,
+  "tslint.ignoreDefinitionFiles": true,
 }
