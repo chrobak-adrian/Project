@@ -5,10 +5,6 @@ const Landing: React.FC = () => (
   <section className="landing">
     <div className="dark-overlay">
       <div className="landing-inner">
-        <div className="landing-welcome bg-dark">
-          <h1 className="x-large">Witamy w Habanero</h1>
-        </div>
-
         <div className="buttons-wrapper">
           <Link to="/menu" className="btn btn-danger">
             Menu

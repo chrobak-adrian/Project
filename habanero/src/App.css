@@ -66,7 +66,7 @@
 /* Landing Page */
 .landing {
   position: relative;
-  /* background: url("./img/landing.jpg") no-repeat; */
+  background: url("./img/landing.jpg") no-repeat;
   background-color: #000;
   background-position: center;
   height: 100vh;
@@ -81,15 +81,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-}
-
-.landing-welcome {
-  padding: 15px 25px;
-  border-radius: var(--border-radius);
-  font-family: "Acme", sans-serif;
-  font-size: 30px;
-  color: #ffffff;
   text-align: center;
 }
 
@@ -184,7 +175,15 @@
 }
 
 .buttons-wrapper {
-  margin-top: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 45em;
+  width: 80%;
+}
+
+.buttons-wrapper .btn {
+  width: 100%;
 }
 
 /* Mobile Styles */
@@ -233,14 +232,5 @@
   /* Buttons */
   .btn {
     width: 100%;
-  }
-
-  .buttons-wrapper a:first-child {
-    margin-bottom: 10px;
-  }
-
-  /* Landing */
-  .landing-welcome {
-    margin: 26px 26px 0 26px;
   }
 }
