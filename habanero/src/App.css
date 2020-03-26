@@ -1,6 +1,16 @@
 * {
   box-sizing: border-box;
 }
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+
 /* Global Styles */
 :root {
   --primary-color: #17a2b8;
@@ -137,6 +147,7 @@
   outline: none;
   text-decoration: none;
   border-radius: var(--buttons-border-radius);
+  font-weight: bold;
 }
 
 .btn-primary {
@@ -179,7 +190,7 @@
   flex-direction: row;
   justify-content: center;
   margin-top: 45em;
-  width: 80%;
+  width: 70%;
 }
 
 .buttons-wrapper .btn {
