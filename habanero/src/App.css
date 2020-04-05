@@ -197,6 +197,44 @@
   width: 100%;
 }
 
+/* Order */
+
+.order-container {
+  width: 100%;
+  background-color: var(--light-color);
+  box-shadow: 0 2px 1px #ccc;
+  font-weight: 400;
+  border: solid 2px var(--danger-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.order-nav {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background: var(--dark-color);
+}
+
+.order-sidebar {
+  padding: 10px;
+}
+
+.order-content {
+}
+
+.ingredient-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 0;
+}
+
+.ingredient-name {
+  width: 5rem;
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
   .container {
