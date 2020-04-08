@@ -1,41 +1,41 @@
 import React from "react";
+import { DISHES } from "../../constants/common";
+import { IIngredient } from "../../types/IIngredient";
+import { ingredients } from "../../mocks/ingredientsResponse";
 
 interface IProps {}
+
 interface IState {
   orderType: number;
-  ingredients: {
-    cheese: 0;
-    chicken: 0;
-    tomato: 0;
-    corn: 0;
-    mushrooms: 0;
-  };
+  ingredients: IIngredient[];
+  dischKind: DISHES;
 }
 
 class Order extends React.Component<IProps, IState> {
   state = {
     orderType: 0,
+    dischKind: DISHES.BURITO,
+    ingredients
   } as IState;
-
   onBuritoSelect = () => this.setState({ orderType: 0 });
   onQuesadillaSelect = () => this.setState({ orderType: 1 });
 
-  render() {
-    const { orderType } = this.state;
+  render(): JSX.Element {
+    const { orderType, ingredients } = this.state;
     const orderQuesadillaType: Array<string> = [
       "Amerykańska",
       "Azjatycka",
       "Grecka",
-      "Meksykańska",
+      "Meksykańska"
     ];
     const orderBuritoType: Array<string> = [
       "Amerykański",
       "Azjatycki",
       "Grecki",
-      "Meksykański",
+      "Meksykański"
     ];
-    const ingredients = ["Ser", "Kukurydza", "Kurczak", "Pieczarki", "Pomidor"];
     console.log(this.state);
+
     return (
       <section className="order">
         <div className="order-container">
@@ -54,23 +54,21 @@ class Order extends React.Component<IProps, IState> {
             <p>Wybierz wariant:</p>
             {orderType === 0
               ? orderBuritoType.map((type: string, index: number) => (
-                  <div className="order-type" key={index}>{`${
-                    index + 1
-                  }. ${type}`}</div>
+                  <div className="order-type" key={index}>{`${index +
+                    1}. ${type}`}</div>
                 ))
               : orderQuesadillaType.map((type: string, index: number) => (
-                  <div className="order-type" key={index}>{`${
-                    index + 1
-                  }. ${type}`}</div>
+                  <div className="order-type" key={index}>{`${index +
+                    1}. ${type}`}</div>
                 ))}
           </div>
           <div className="order-content">
             <div>
-              {ingredients.map((ingidient: string, index: number) => (
+              {ingredients.map((ingidient: IIngredient, index: number) => (
                 <div key={index} className="ingredient-row">
-                  <div className="ingredient-name">{ingidient}</div>
+                  <div className="ingredient-name">{ingidient.name}</div>
                   <div className="btn btn-danger">-</div>
-                  <div>0</div>
+                  <div>{ingidient.value}</div>
                   <div className="btn btn-success">+</div>
                 </div>
               ))}

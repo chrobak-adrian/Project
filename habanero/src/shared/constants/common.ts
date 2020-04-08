@@ -1,0 +1,4 @@
+export enum DISHES {
+  QUESADILLA = "QUESADILLA",
+  BURITO = "BURITO"
+}
