@@ -29,31 +29,39 @@ class Order extends React.Component<IProps, IState> {
       "Meksykańska",
     ];
     const orderBuritoType: Array<string> = [
-      "Amerykańska",
-      "Azjatycka",
-      "Grecka",
-      "Meksykańska",
+      "Amerykański",
+      "Azjatycki",
+      "Grecki",
+      "Meksykański",
     ];
     const ingredients = ["Ser", "Kukurydza", "Kurczak", "Pieczarki", "Pomidor"];
     console.log(this.state);
     return (
       <section className="order">
         <div className="order-container">
-          <div className="order-nav">
-            <div className="btn btn-danger" onClick={this.onBuritoSelect}>
-              Burito
-            </div>
-            <div className="btn btn-danger" onClick={this.onQuesadillaSelect}>
-              Quesadilla
+          <div className="order-header">
+            <div className="center">
+              <p>Wybierz coś dla siebie: </p>
+              <div className="btn btn-danger" onClick={this.onBuritoSelect}>
+                Burito
+              </div>
+              <div className="btn btn-danger" onClick={this.onQuesadillaSelect}>
+                Quesadilla
+              </div>
             </div>
           </div>
           <div className="order-sidebar">
+            <p>Wybierz wariant:</p>
             {orderType === 0
               ? orderBuritoType.map((type: string, index: number) => (
-                  <div key={index}>{`${index + 1}. ${type}`}</div>
+                  <div className="order-type" key={index}>{`${
+                    index + 1
+                  }. ${type}`}</div>
                 ))
               : orderQuesadillaType.map((type: string, index: number) => (
-                  <div key={index}>{`${index + 1}. ${type}`}</div>
+                  <div className="order-type" key={index}>{`${
+                    index + 1
+                  }. ${type}`}</div>
                 ))}
           </div>
           <div className="order-content">
@@ -61,10 +69,15 @@ class Order extends React.Component<IProps, IState> {
               {ingredients.map((ingidient: string, index: number) => (
                 <div key={index} className="ingredient-row">
                   <div className="ingredient-name">{ingidient}</div>
-                  <div className="btn btn-danger">+</div>
                   <div className="btn btn-danger">-</div>
+                  <div>0</div>
+                  <div className="btn btn-success">+</div>
                 </div>
               ))}
+            </div>
+            <div className="center">
+              <div className="btn btn-danger">Wyczyść</div>
+              <div className="btn btn-success">Dodaj</div>
             </div>
           </div>
         </div>

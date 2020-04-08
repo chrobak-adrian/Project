@@ -15,6 +15,7 @@
 :root {
   --primary-color: #17a2b8;
   --dark-color: #343a40;
+  --gray-color: #6c7983;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -76,7 +77,7 @@
 /* Landing Page */
 .landing {
   position: relative;
-  background: url("./img/landing.jpg") no-repeat;
+  background: url("./assets/images/Habanero_logo.png") no-repeat;
   background-color: #000;
   background-position: center;
   height: 100vh;
@@ -104,7 +105,8 @@
   height: 100%;
 }
 
-* Text Styles*/ .x-large {
+/* Text Styles*/
+.x-large {
   font-size: 4rem;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -142,7 +144,7 @@
   font-size: 1rem;
   border: none;
   cursor: pointer;
-  margin-right: 0.5rem;
+  margin: 0 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
   text-decoration: none;
@@ -197,9 +199,19 @@
   width: 100%;
 }
 
+/* center items */
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Order */
 
 .order-container {
+  display: flex;
+  flex-flow: row wrap;
   width: 100%;
   background-color: var(--light-color);
   box-shadow: 0 2px 1px #ccc;
@@ -209,30 +221,69 @@
   overflow: hidden;
 }
 
-.order-nav {
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-  background: var(--dark-color);
-}
-
-.order-sidebar {
+.order-container > * {
+  flex: 1 100%;
   padding: 10px;
 }
 
+.order-header {
+  background: var(--dark-color);
+  padding: 0;
+}
+
+.order-header p {
+  color: var(--light-color);
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.order-sidebar {
+  flex: 1 0;
+  order: 1;
+  background: var(--gray-color);
+  color: var(--light-color);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.order-type {
+  padding: 4px;
+}
+
+.order-type:hover {
+  background: var(--dark-color);
+}
+
 .order-content {
+  flex: 3 0px;
+  order: 2;
 }
 
 .ingredient-row {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin: 4px 0;
+  margin: 0.5rem 1.5rem;
 }
 
 .ingredient-name {
   width: 5rem;
+  margin-right: 1.5rem;
+}
+
+/* Contact page */
+
+.hours-open-label {
+  position: relative;
+  max-width: 300px;
+  line-height: 26px;
+  font-size: 0.9rem;
+}
+
+.hours-open-day {
+  display: inline-block;
+  min-width: 120px;
 }
 
 /* Mobile Styles */
